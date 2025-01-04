@@ -115,6 +115,18 @@ nav {
     border-radius: 6px;
 }
 
+.menu a:link, .menu a:visited {
+    color: var(--heading-colour);
+    background-color: var(--main-colour);
+    text-decoration: none;
+}
+
+.menu a:hover, .menu a:active {
+    color: var(--light-colour);
+    background-color: var(--third-colour);
+    text-decoration: underline;
+}
+
 h1, h2, h3, h4, h5, h6 {
     color: var(--heading-colour);
     font-family: Georgia, 'Times New Roman', Times, serif;
