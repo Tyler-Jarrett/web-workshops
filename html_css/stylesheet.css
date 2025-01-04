@@ -1,6 +1,6 @@
 :root {
-    --main-colour: #16C47F;
-    --second-colour: #FFD65A;
+    --main-colour: #12a46F;
+    --second-colour: #f1b314;
     --third-colour: #376E5E;
     --trim-colour: #3D3D3D;
     --bg-grey: #c7c7c7;
@@ -11,6 +11,8 @@
     --font-weight: 500;
     --text-colour: #444;
     --heading-colour: #222;
+    --light-colour: #eee;
+
 }
 
 
@@ -39,7 +41,26 @@
     padding: 40px 20px;
 }
 
-.row::after {
+.product-row {
+    width: 75%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px 18px;
+    border: 2px solid var(--heading-colour);
+    border-radius: 10px;
+    background-color: var(--bg-grey);
+}
+
+.product-row h2{
+    color: var(--main-colour);
+}
+
+.price {
+    color: var(--second-colour);
+}
+
+.row::after, .product-row::after {
     content: '';
     display: table;
     clear: both;
@@ -51,7 +72,7 @@ body {
     font-family: var(--font-style);
     line-height: var(--line-height);
     font-weight: var(--font-weight);
-    padding: 50px;
+    padding: 50px 120px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -69,7 +90,28 @@ h2 {
     font-size: 32px;
 }
 
-img {
+h3 {
+    font-size: 26px;
+}
+
+label {
+    color: var(--text-colour);
+    font-size: var(--font-size);
+    font-family: var(--font-style);
+    line-height: var(--line-height);
+    font-weight: var(--font-weight);
+}
+
+input, textarea {
+    width: 80%;
+    margin-bottom: 12px;
+}
+
+form {
+    padding: 20px 40px;
+}
+
+img.centre {
     width: auto;
     max-height: 300px;
     display: block;
@@ -82,4 +124,21 @@ a:link {
 
 a:visited, a:hover, a:active {
     color: var(--trim-colour);
+}
+
+.button, .button:link {
+    padding: 12px 24px;
+    border: 1px solid var(--heading-colour);
+    border-radius: 10px;
+    background-color: var(--trim-colour);
+    color: var(--light-colour);
+    font-weight: 600;
+    font-size: 20px;
+    margin: 12px 8px;
+    float:right;
+}
+
+.button:hover {
+    background-color: var(--third-colour);
+    color: var(--heading-colour);
 }
