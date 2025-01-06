@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Javascript</title>
+</head>
+<body>
+    
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="../../images/LazOne-Nav.png" />
+            </a>
+        </div>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="javascript.html">Javascript</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </nav>
+
+    <div class="row">
+        <h2>Would you like to play a game?</h2>
+        <p>I have two different versions of the same game for you to make.<br />
+            Both are games where you will input how many fingers you are holding up, and the computer should randomly guess until it guesses the right number. <br />
+            Using a named function to run the game means that you can re-use the logic.
+        </p>
+        
+        
+        <div class="column">
+            <p>In the first game, I have made a drop down menu for you.<br />
+                This means the user can only select options from the given range.
+            </p>
+            <form name="first_game">
+                <select id="number_select">
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <button id="first_guess">Guess</button>
+            </form>
+        </div>
+        <div class="column">
+            <p>In the second game, you have a simple input field.<br />
+                This means you will have to validate the input before running the game.
+            </p>
+            
+            <form name="second_game">
+                <input type="text" id="number_input">
+                <button id="second_guess">Guess</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+<footer>
+
+    <script type="text/javascript" src="solution.js"></script>
+</footer>
+</html>
