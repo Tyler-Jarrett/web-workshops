@@ -23,42 +23,62 @@
         </div>
     </nav>
 
-    <div class="row">
-        <h2>Would you like to play a game?</h2>
-        <p>I have two different versions of the same game for you to make.<br />
-            Both are games where you will input how many fingers you are holding up, and the computer should randomly guess until it guesses the right number. <br />
-            Using a named function to run the game means that you can re-use the logic.
-        </p>
-        
-        
-        <div class="column">
-            <p>In the first game, I have made a drop down menu for you.<br />
-                This means the user can only select options from the given range.
-            </p>
-            <form name="first_game">
-                <select id="number_select">
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-                <button id="first_guess">Guess</button>
-            </form>
-        </div>
-        <div class="column">
-            <p>In the second game, you have a simple input field.<br />
-                This means you will have to validate the input before running the game.
+    <div class="page-container">
+        <div class="row" style="background-color: #ccc;">
+            <h2>Would you like to play a game?</h2>
+            <p>I have two different versions of the same game for you to make.<br />
+                Both are games where you will input how many fingers you are holding up, and the computer should randomly guess until it guesses the right number. <br />
+                Using a named function to run the game means that you can re-use the logic.
             </p>
             
-            <form name="second_game">
-                <input type="text" id="number_input">
-                <button id="second_guess">Guess</button>
-            </form>
+            
+            <div class="column">
+                <p>In the first game, I have made a drop down menu for you.<br />
+                    This means the user can only select options from the given range.
+                </p>
+                <form name="first_game">
+                    <select id="number_select">
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                    <button id="first_guess">Guess</button>
+                </form>
+            </div>
+            <div class="column">
+                <p>In the second game, you have a simple input field.<br />
+                    This means you will have to validate the input before running the game.
+                </p>
+                
+                <form name="second_game">
+                    <input type="text" id="number_input">
+                    <button id="second_guess">Guess</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="row" style="background-color: #333;">
+            <div class="column">
+                <h1 style="color: yellow;">Y
+                    <span class="js_letter" id="letter_e">E</span>
+                    <span class="js_letter" id="letter_l">LL</span>
+                    <span class="js_letter" id="letter_o">O</span>
+                    W R
+                    <span class="js_letter" id="letter_o">O</span>
+                    CK
+                </h1>
+                <p style="color: white;">Your challenge is to modify the letters of this heading using Javascript. <br />
+                    Have a function periodically flicker the letters between standard text and 1337 speak.
+                </p>
+            </div>
+            <div class="column">
+                
+            </div>
         </div>
     </div>
-
 </body>
 <footer>
 

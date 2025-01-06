@@ -23,6 +23,34 @@ function makeGuesses(numFingers){
     return;
 }
 
+function changeLetters(){
+   
+    for (const letter of letters){
+        if (letter.id == "letter_e"){
+            if (Math.random() < SWAP_CHANCE) {
+                if (letter.innerText == "E")
+                    letter.innerText = "3"
+                else 
+                    letter.innerText = "E"
+            }
+        } else if (letter.id == "letter_l"){
+            if (Math.random() < SWAP_CHANCE) {
+                if (letter.innerText == "LL")
+                    letter.innerText = "77"
+                else 
+                    letter.innerText = "LL"
+            }
+        } else if (letter.id == "letter_o"){
+            if (Math.random() < SWAP_CHANCE) {
+                if (letter.innerText == "O")
+                    letter.innerText = "0"
+                else 
+                    letter.innerText = "O"
+            }
+        }
+    }
+}
+
 function validationIsInRange(value, lowerBound, upperBound){
     if (value < lowerBound)
         return false;
@@ -53,4 +81,13 @@ document.getElementById("second_guess").onclick = function(){
     }
 
     let guessCount = makeGuesses(numFingers);
+}
+
+const SWAP_CHANCE = 0.1;
+let letters;
+
+window.onload = function(){
+    letters = document.getElementsByClassName("js_letter");
+    console.log(letters);
+    setInterval(changeLetters, 300);
 }
