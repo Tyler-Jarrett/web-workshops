@@ -59,6 +59,27 @@ function validationIsInRange(value, lowerBound, upperBound){
     return true;
 }
 
+function boxAnimation(){
+    let instance;
+    const animationBox = document.getElementById("animation-box");
+    let currentPos = 0;
+
+    clearInterval(instance);
+    instance = setInterval(moveBox,10);
+
+    function moveBox(){
+        if (currentPos >= 350){
+            clearInterval(instance);
+        } else {
+            currentPos++;
+            animationBox.style.top = currentPos + "px";
+            animationBox.style.left = currentPos + "px";
+        }
+    }
+}
+
+
+
 
 //Main logic thread
 document.getElementById("first_guess").onclick = function(){
@@ -70,7 +91,6 @@ document.getElementById("first_guess").onclick = function(){
 document.getElementById("second_guess").onclick = function(){
     let numFingers = document.forms["second_game"]["number_input"].value;
     numFingers = parseInt(numFingers);
-    console.log(numFingers)
 
     if (isNaN(numFingers)){
         window.alert("That's not a number, you can find the number keys above the letters");
@@ -83,11 +103,14 @@ document.getElementById("second_guess").onclick = function(){
     let guessCount = makeGuesses(numFingers);
 }
 
+document.getElementById("animation-btn").onclick = function(){
+    boxAnimation();
+}
+
 const SWAP_CHANCE = 0.1;
 let letters;
 
 window.onload = function(){
     letters = document.getElementsByClassName("js_letter");
-    console.log(letters);
     setInterval(changeLetters, 300);
 }
