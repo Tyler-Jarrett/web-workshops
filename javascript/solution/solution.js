@@ -15,20 +15,42 @@ function makeGuesses(numFingers){
 
         if (guessCount > 100){
             console.warn("Something has gone wrong with the guessing game, exiting now")
-            return null;
+            return;
         }
     }
 
-    return guessCount;
+    window.alert("I got it, you were holding up " + numFingers + " fingers, I got it in " + guessCount + " guesses!")
+    return;
 }
 
-document.getElementById("first_guess").onclick = function(){
-    let numFingers = document.forms["first_game"]["number_select"].value
-    let guessCount = makeGuesses(numFingers);
+function validationIsInRange(value, lowerBound, upperBound){
+    if (value < lowerBound)
+        return false;
+    if (value > upperBound)
+        return false;
+    return true;
+}
 
-    if (guessCount == null){
+
+//Main logic thread
+document.getElementById("first_guess").onclick = function(){
+
+    let numFingers = document.forms["first_game"]["number_select"].value;
+    let guessCount = makeGuesses(numFingers);
+}
+
+document.getElementById("second_guess").onclick = function(){
+    let numFingers = document.forms["second_game"]["number_input"].value;
+    numFingers = parseInt(numFingers);
+    console.log(numFingers)
+
+    if (isNaN(numFingers)){
+        window.alert("That's not a number, you can find the number keys above the letters");
+        return;
+    } else if (!validationIsInRange(numFingers,0,5)){
+        window.alert("I don't know if you've got some hideous deformity, or if you just can't count, but I'm concerned either way, try a normal number of fingers")
         return;
     }
 
-    window.alert("I got it, you were holding up " + numFingers + " fingers, I got it in " + guessCount + " guesses!")
+    let guessCount = makeGuesses(numFingers);
 }
