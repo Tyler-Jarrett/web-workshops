@@ -9,3 +9,8 @@ def list_view(request):
     product_list = Item.objects.all()
 
     return render(request, 'shop/products.html', {'product_list': product_list})
+
+def detail_view(request, item_id):
+    product = Item.objects.get(pk = item_id)
+
+    return render(request, 'shop/detail.html', {'product': product})
