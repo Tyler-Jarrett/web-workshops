@@ -7,3 +7,6 @@ class Item(models.Model):
     price = models.FloatField()
     cost = models.FloatField()
     stockCount = models.IntegerField()
+
+    def __str__(self):
+        return self.itemName

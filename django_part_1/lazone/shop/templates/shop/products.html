@@ -6,8 +6,17 @@
     <title>Products</title>
 </head>
 <body>
-    {% for product in products %}
-
+    {% for product in product_list %}
+        <div>
+            <h3>{{ product.itemName }}</h3>
+            <p>{{ product.description }} </p>
+            <h4>$ {{ product.price }} </h4>
+            {% if product.stockCount > 0 %}
+                <h4>Stock: {{ product.stockCount }} </h4>
+            {% else %}
+                <h4>Out of stock</h4>
+            {% endif %}
+        </div>
     {% endfor %}
 </body>
 </html>
