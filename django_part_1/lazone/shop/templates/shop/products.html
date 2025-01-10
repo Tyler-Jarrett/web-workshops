@@ -16,7 +16,7 @@
             {% else %}
                 <h4>Out of stock</h4>
             {% endif %}
-            <a href="{{ product.id }}">Learn more</a>
+            <a href="{% url 'shop:product_detail_view' product.id %}">Learn more</a>
         </div>
     {% endfor %}
 </body>

@@ -6,7 +6,7 @@ class Item(models.Model):
     description = models.TextField()
     price = models.FloatField()
     cost = models.FloatField()
-    stockCount = models.IntegerField()
+    stockCount = models.IntegerField(default = 0)
 
     def __str__(self):
         return self.itemName
