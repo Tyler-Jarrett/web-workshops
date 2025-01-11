@@ -42,6 +42,6 @@ def delete_product(request, item_id):
         product.delete()
         return redirect('shop:product_list_view')
     
-    render(request, 'shop/delete.html', {})
+    return render(request, 'shop/delete.html', {'product':product})
     
 
