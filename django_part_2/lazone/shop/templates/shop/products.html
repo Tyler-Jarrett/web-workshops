@@ -1,13 +1,20 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'shop/stylesheet.css' %}">
     <title>Products</title>
 </head>
 <body>
+    <h1>Image test 1</h1>
+    <img style="width: auto; height: 200px;" src="{% static 'LazOne-Main.png' %}">
+    <img style="width: auto; height: 200px;" src="{% static 'customers/laser vest.png' %}">
+
     {% for product in product_list %}
         <div>
+            <img style="width: auto; height: 200px;" src="{{ product.image.url }}">
             <h3>{{ product.itemName }}</h3>
             <p>{{ product.description }} </p>
             <h4>$ {{ product.price }} </h4>

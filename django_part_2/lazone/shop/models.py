@@ -7,6 +7,7 @@ class Item(models.Model):
     price = models.FloatField()
     cost = models.FloatField()
     stockCount = models.IntegerField(default = 0)
+    image = models.ImageField(default = 'shop/placeholder_product.jpeg', upload_to = 'shop/')
 
     def __str__(self):
         return self.itemName
