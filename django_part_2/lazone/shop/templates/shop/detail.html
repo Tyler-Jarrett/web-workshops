@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+</head>
+<body>
+    
+    <div>
+        <h3>{{ product.itemName }}</h3>
+        <p>{{ product.description }} </p>
+        <h4>$ {{ product.price }} </h4>
+        {% if product.stockCount > 0 %}
+            <h4>Stock: {{ product.stockCount }} </h4>
+        {% else %}
+            <h4>Out of stock</h4>
+        {% endif %}
+        <a href="{% url 'shop:edit_product' product.id %}">Edit this product</a> <br />
+        
+        <a href="{% url 'shop:delete_product' product.id %}">Delete this product</a>
+    </div>
+    
+</body>
+</html>

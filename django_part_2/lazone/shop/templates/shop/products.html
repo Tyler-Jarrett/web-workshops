@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+<body>
+    {% for product in product_list %}
+        <div>
+            <h3>{{ product.itemName }}</h3>
+            <p>{{ product.description }} </p>
+            <h4>$ {{ product.price }} </h4>
+            {% if product.stockCount > 0 %}
+                <h4>Stock: {{ product.stockCount }} </h4>
+            {% else %}
+                <h4>Out of stock</h4>
+            {% endif %}
+            <a href="{% url 'shop:product_detail_view' product.id %}">Learn more</a>
+        </div>
+    {% endfor %}
+</body>
+</html>
