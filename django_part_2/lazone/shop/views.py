@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Item
-from .form import ItemForm
+from .forms import ItemForm
 
 # Create your views here.
 def index(request):
