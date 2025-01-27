@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,9 @@
     <title>Home</title>
 </head>
 <body>
+    {% block body %}
     <h1>LazOne Online Laser Retailer</h1>
     <p>We've got all the goods for your laser tag needs </p>
+    {% endblock %}
 </body>
 </html>

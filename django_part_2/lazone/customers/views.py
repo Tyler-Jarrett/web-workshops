@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth import logout
 from .forms import RegistrationForm
 
 
@@ -13,3 +14,10 @@ def register(request):
     else:
         form = RegistrationForm()
     return render(request, 'customers/register.html', {'form':form})
+
+def logout_view(request):
+    logout(request)
+    return redirect('customers:login')
+
+def access_denied(request):
+    return render(request, 'customers/denied.html')
