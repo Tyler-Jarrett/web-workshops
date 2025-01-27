@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 from .models import Item
 from .forms import ItemForm
 from customers.models import StoreUser
@@ -11,7 +12,11 @@ def index(request):
 def list_view(request):
     product_list = Item.objects.all()
 
-    return render(request, 'shop/products.html', {'product_list': product_list})
+    paginator = Paginator(product_list, 3)
+    page = request.GET.get('page')
+    page_data = paginator.get_page(page)
+
+    return render(request, 'shop/products.html', {'product_list': page_data})
 
 def detail_view(request, item_id):
     product = Item.objects.get(pk = item_id)
