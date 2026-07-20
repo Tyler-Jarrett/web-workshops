@@ -1,0 +1,15 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}
+<title>{{ news.title }}</title>
+{% endblock %}
+
+{% block body %}
+
+<div>
+    <h5>Author: {{ news.author }}</h5>
+    <h6>Created: {{ news.creation_date |  date:"D jS M Y"}}</h6>
+</div>
+
+{% endblock %}
